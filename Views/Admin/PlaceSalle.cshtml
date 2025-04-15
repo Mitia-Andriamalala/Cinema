@@ -1,0 +1,53 @@
+@model List<GestionCinema.Models.Salle>
+@{
+    ViewData["Title"] = "Gestionnaire de Place";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Gestion">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Gestion" asp-action="PlaceSalle">Place de salle</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="text-center">
+
+    <h1>Nouvelle Salle</h1>
+    <form action="/Gestionnaire/InsertPlaceSalle" method="post">
+        <div class="form-group">
+            <label for="salle">Salle:</label>
+            <select class="form-control" name="salle" id="salle">
+                <option value="">Sélectionnez une salle</option>
+                @foreach (var salle in Model)
+                {
+                    <option value="@salle.idSalle">@salle.nomSalle</option>
+                }
+            </select>
+            <label for="">nom de Colonne: </label>
+            <input type="text" name="col" id="col">
+            <label for="">nombre lignes:</label>
+            <input type="number" name="nbLine" id="nbLine">
+
+            <label for="">nombre places:</label>
+            <input type="number" name="nbPl" id="nbPl">
+
+            <button class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+    <br />
+    <a href="/Home/Index" class="btn btn-secondary">Go Back to Home</a>
+</div>

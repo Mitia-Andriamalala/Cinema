@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<h1>Create Page</h1>
+
+<form method="post" action="/Home/Save">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br/>
+<a href="/Home/Index" class="btn btn-secondary">Go Back to Home</a>

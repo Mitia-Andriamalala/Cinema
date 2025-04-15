@@ -1,0 +1,73 @@
+@model List<GestionCinema.Models.InfoFilm>
+@using GestionCinema.Models
+
+@{
+    ViewData["Title"] = "Film";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="InsertFilm">Insertion film</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Categorie">Categorie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Classe">Classification</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Film</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Catégorie</th>
+                <th>Classification</th>
+                <th>Durée</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var listeFilm in Model)
+            {
+                <tr>
+                    <td>
+                        @if (listeFilm.Image != null && listeFilm.Image.Length > 0)
+                        {
+                            <img src="@FonctionAutre.ImageBase64(listeFilm.Image)" alt="Image du Film" style="width: 100px; height: auto;" />
+                        }
+                        else
+                        {
+                            <span>Aucune image</span>
+                        }
+                    </td>
+                    <td>@listeFilm.Titre</td>
+                    <td>@listeFilm.Categorie</td>
+                    <td>@listeFilm.Classification</td>
+                    <td>@listeFilm.Duree</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Admin/AccueilAdmin" class="btn btn-secondary">Go Back to Home</a>
+</div>

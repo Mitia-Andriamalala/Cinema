@@ -1,0 +1,55 @@
+@model List<GestionCinema.Models.ListeReserve>
+@{
+    ViewData["Title"] = "Mon liste reservation";
+}
+
+<div class="text-center">
+    <h3 class="display-2">Reservations fait</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>IdReservation</th>
+            <th>EtatPlace</th>
+            <th>PlageHoraireDebut</th>
+            <th>Titre</th>
+            <th>NomSalle</th>
+            <th>Reservation</th>
+        </tr>
+        @foreach (var res in Model)
+        {
+            <tr>
+                <td>@res.IdReservation</td>
+                <td>
+                    @if(res.EtatPlace==1)
+                    {
+                        <p>Payer</p>
+                    }
+                    else
+                    {
+                        <p>Reserver simplement</p>
+                    }
+                </td>
+                <td>@res.PlageHoraireDebut</td>
+                <td>@res.Titre</td>
+                <td>@res.NomSalle</td>
+                <td>
+                    @if(res.EtatPlace==1)
+                    {
+                        <a class="nav-link text-dark bg-danger" asp-area="" asp-controller="Home">
+                            Annuler
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark bg-danger" asp-area="" asp-controller="Home">
+                            Annuler
+                        </a>
+                        <a class="nav-link text-dark bg-info" asp-area="" asp-controller="Home" asp-action="Update" asp-route-idReservation="@res.IdReservation">
+                            Payer
+                        </a>
+                    }
+                    
+                </td>
+            </tr>
+        }
+    </table>
+</div>

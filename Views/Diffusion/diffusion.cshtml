@@ -1,0 +1,72 @@
+@{
+    @using GestionCinema.Models;
+    ViewData["Title"] = "Insertion Film";
+    var salleList = ViewData["SalleList"] as List<Salle>;
+    var listeFilm = ViewData["FilmList"] as List<Film>;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Diffusion" asp-action="ListeDiffusion">Liste diffusion</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+
+    <h1 class="display-4 animated-title-zoom">Insertion Film</h1>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    <form action="/Diffusion/saveDiffusion" method="post">
+        <div class="form-group">
+
+            <label for="categorie">Salle:</label>
+            <select class="form-control" name="salle" id="salle">
+                <option value="">Sélectionnez une salle</option>
+                @foreach (var salle in salleList)
+                {
+                    <option value="@salle.idSalle">@salle.nomSalle</option>
+                }
+            </select>
+
+            <label for="classe">Film:</label>
+            <select class="form-control" name="film" id="film">
+                <option value="">Sélectionnez un film</option>
+                @foreach (var film in listeFilm)
+                {
+                    <option value="@film.IdFilm">@film.Titre</option>
+                }
+            </select>
+
+            <label for="duree">Date de diffusion:</label>
+            <input type="datetime-local" name="plageDebt" id="">
+            
+
+            <button class="btn btn-primary">Diffuser</button>
+        </div>
+    </form>
+    <br />
+    <a href="/Home/Index" class="btn btn-secondary">Retour à l'accueil</a>
+</div>

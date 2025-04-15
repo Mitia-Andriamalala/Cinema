@@ -1,0 +1,46 @@
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+  }
+  
+  /* Applique l'animation */
+  .animate-star {
+    display: inline-block;
+    animation: slideFade 2s infinite;
+    font-family: 'Beauty', sans-serif;
+    color: gold;
+  }
+
+  /* Fond noir doré foncé */
+body {
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    color: #c9c8c5;
+}
+
+header nav {
+    background: linear-gradient(40deg, #0c0c0c, #222121);
+    color: #c9c8c5;
+}
+
+
+/* Styles pour la navbar */
+.navbar {
+    background-color: #000;
+    border-bottom: 2px solid #ffd700;
+}
+.navbar .nav-link {
+    color: #ffd700;
+}
+.navbar .nav-link:hover {
+    color: #fff;
+}

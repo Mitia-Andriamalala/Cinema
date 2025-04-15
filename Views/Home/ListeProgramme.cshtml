@@ -1,0 +1,60 @@
+@model List<GestionCinema.Models.DiffusionFilm>
+@using GestionCinema.Models
+@{
+    ViewData["Title"] = "Home Page";
+    var currentDateTime = DateTime.Now;
+}
+
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Welcome to CineMlay</h1>
+    <h3 class="display-2">Liste de programmes en diffusion prévue</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>nomSalle</th>
+            <th>titre</th>
+            <th></th>
+            <th>plageHoraireDebut</th>
+            <th>plageHoraireFin</th>
+            <th>categorie</th>
+            <th>duree</th>
+            <th>classification</th>
+            <th>Option</th>
+            <th>Payement</th>
+        </tr>
+        @foreach (var diffu in Model)
+        {
+            if (diffu.PlageHoraireDebut >= currentDateTime)
+            {
+                <tr>
+                    <td>@diffu.NomSalle</td>
+                    <td>@diffu.Titre</td>
+                    <td>
+                        @if (diffu.Image != null && diffu.Image.Length > 0)
+                        {
+                            <img src="@FonctionAutre.ImageBase64(diffu.Image)" alt="Image du Film" style="width: 100px; height: auto;" />
+                        }
+                        else
+                        {
+                            <span>Aucune image</span>
+                        }
+                    </td>
+                    <td>@diffu.PlageHoraireDebut</td>
+                    <td>@diffu.PlageHoraireFin</td>
+                    <td>@diffu.Categorie</td>
+                    <td>@diffu.Duree</td>
+                    <td>@diffu.Classification</td>
+                    <td>
+                        <a class="nav-link text-dark bg-success" asp-area="" asp-controller="Home" asp-action="ReservationPage" asp-route-salleId="@diffu.SalleId" asp-route-idDiff="@diffu.IdDiffusion">
+                            Reserver
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-area="" asp-controller="Payement" asp-action="PayementPage" asp-route-idDiff="@diffu.IdDiffusion" asp-route-salleId="@diffu.SalleId">
+                            Payez
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,24 @@
+﻿@model List<GestionCinema.Models.DiffusionFilm>
+@{
+    ViewData["Title"] = "Home Page";
+    var currentDateTime = DateTime.Now;
+}
+
+<div class="text-center">
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    <!-- Nouveau titre avec animation distincte -->
+    <h1 class="display-4 animated-title-zoom">Welcome to CineMlay</h1>
+    <h1 class="display-6">Entrez votre compte</h1>
+    <form method="post" action="/Home/Connecter">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="nom" name="nom" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+</div>

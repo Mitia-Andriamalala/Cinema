@@ -1,0 +1,61 @@
+@model List<GestionCinema.Models.Classification>
+@{
+    ViewData["Title"] = "Insertion Classification";
+    
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Film">Film</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Categorie">Categorie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Classe">Classification</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Nouvelle Classe</h1>
+    <form action="/Film/SaveClasse" method="post">
+        <div class="form-group">
+            <label for="titre">Nom Classe:</label>
+            <input class="form-control" type="text" name="classe" id="classe">
+
+            <button class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+
+    <h1 class="display-4 animated-title-zoom">Classe existant</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Nom classe</th>
+        </tr>
+        @foreach (var classification in Model)
+        {
+            <tr>
+                <td>@classification.classification</td>
+            </tr>
+        }
+    </table>
+    <br/>
+    <a href="/Film/Film" class="btn btn-secondary">Retour aux Films</a>
+</div>

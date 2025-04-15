@@ -1,0 +1,75 @@
+@model List<GestionCinema.Models.DiffusionFilm>
+@using GestionCinema.Models
+@{
+    ViewData["Title"] = "Film";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Diffusion" asp-action="diffusion">Insertion diffusion</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Film en diffusion</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Numero de diffusion</th>
+            <th>nomSalle</th>
+            <th>titre</th>
+            <th>Film</th>
+            <th>plageHoraireDebut</th>
+            <th>plageHoraireFin</th>
+            <th>categorie</th>
+            <th>duree</th>
+            <th>classification</th>
+            <th>Option</th>
+        </tr>
+        @foreach (var diffu in Model)
+        {
+            <tr>
+                <td>@diffu.IdDiffusion</td>
+                <td>@diffu.NomSalle</td>
+                <td>@diffu.Titre</td>
+                <td>
+                    @if (diffu.Image != null && diffu.Image.Length > 0)
+                    {
+                        <img src="@FonctionAutre.ImageBase64(diffu.Image)" alt="Image du Film" style="width: 100px; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>Aucune image</span>
+                    }
+                </td>
+                <td>@diffu.PlageHoraireDebut</td>
+                <td>@diffu.PlageHoraireFin</td>
+                <td>@diffu.Categorie</td>
+                <td>@diffu.Duree</td>
+                <td>@diffu.Classification</td>
+                <td>
+                    <a class="nav-link text-dark bg-warning" asp-area="" asp-controller="Diffusion" asp-action="PlaceInfo" asp-route-salleId="@diffu.SalleId" asp-route-idDiff="@diffu.IdDiffusion">
+                        Visualiser
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="/Home/Index" class="btn btn-secondary">Go Back to Home</a>
+</div>

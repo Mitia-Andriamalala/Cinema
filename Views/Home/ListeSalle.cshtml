@@ -1,0 +1,28 @@
+@model List<GestionCinema.Models.Salle>
+
+@{
+    ViewData["Title"] = "Liste des Salles";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <!-- Display the salles in a table -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id Salle</th>
+                <th>Nom Salle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var salle in Model)
+            {
+                <tr>
+                    <td>@salle.idSalle</td>
+                    <td>@salle.nomSalle</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

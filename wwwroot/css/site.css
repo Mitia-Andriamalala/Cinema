@@ -1,0 +1,184 @@
+/* ======================== GLOBAL STYLES ======================== */
+/* Corps de la page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000; /* Fond noir */
+  color: white; /* Texte blanc */
+  margin: 0;
+  padding: 0;
+}
+
+/* Titres généraux */
+h1, h2, h3, h4 {
+  color: #ecf0f1;
+}
+
+/* ======================== STYLES DE LA PAGE D'ACCUEIL (Index) ======================== */
+/* Style pour la section d'accueil */
+.text-center {
+  text-align: center;
+  padding-top: 100px; /* Espacement pour mieux centrer le contenu */
+  min-height: 100vh; /* Remplir toute la hauteur de l'écran */
+  background-color: #000000; /* Fond noir pour la section */
+}
+
+/* Titres de la page d'accueil */
+h1.display-4 {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ecf0f1; /* Blanc cassé pour un contraste doux */
+}
+
+h1.display-6 {
+  font-size: 1.8em;
+  font-weight: lighter;
+  color: #bdc3c7; /* Gris clair pour un effet plus subtil */
+}
+
+/* Alertes */
+.alert {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #e74c3c; /* Rouge vif pour les alertes */
+  border: 1px solid #c0392b;
+}
+
+/* Formulaire de connexion */
+.form-group {
+  margin: 15px 0;
+}
+
+/* ======================== STYLES DE LA PAGE ListeProgramme ======================== */
+/* Titre de la page ListeProgramme */
+h3.display-2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #ecf0f1;
+}
+
+/* Style de la table des programmes */
+table.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table.table-bordered {
+  border: 1px solid #bdc3c7;
+}
+
+table.table th, table.table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #bdc3c7;
+}
+
+table.table th {
+  background-color: #333;
+  color: #ecf0f1;
+}
+
+table.table td {
+  background-color: #FFF8DC;
+}
+
+/* Images dans la table */
+table.table img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* ======================== STYLES DE LA PAGE GENERALE (TOUT LE SITE) ======================== */
+/* Liens */
+a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+/* ======================== ANIMATION DU TITRE CINEMALY ======================== */
+
+/* Animation de décalage du titre */
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.animated-title {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Cinzel', serif; /* Utilisation de la police Cinzel pour un aspect cinématographique */
+  font-size: 2rem; /* Taille réduite pour rendre le texte plus adapté à l'interface */
+  font-weight: 700; /* Gras pour donner du caractère */
+  color: #333;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Effet de survol avec changement de couleur et ombre */
+.animated-title:hover {
+  color: #ff6347; /* Couleur orange clair pour l'effet hover */
+  text-shadow: 0 0 10px rgba(255, 99, 71, 0.8), 0 0 20px rgba(255, 99, 71, 0.7); /* Glow orange */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Effet "Neon Glow" avec oscillation subtile */
+.animated-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideInLeft 1s ease-out forwards, neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% {
+      text-shadow: 0 0 10px rgba(255, 99, 71, 0.7), 0 0 20px rgba(255, 99, 71, 0.5), 0 0 30px rgba(255, 99, 71, 0.3);
+  }
+  50% {
+      text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 25px rgba(255, 99, 71, 0.9), 0 0 40px rgba(255, 99, 71, 0.6);
+  }
+  100% {
+      text-shadow: 0 0 10px rgba(255, 99, 71, 0.7), 0 0 20px rgba(255, 99, 71, 0.5), 0 0 30px rgba(255, 99, 71, 0.3);
+  }
+}
+
+
+/* ======================== Nouvelle Animation Titre ======================== */
+@keyframes zoomInBlur {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+      filter: blur(5px);
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+      filter: blur(0);
+  }
+}
+
+.animated-title-zoom {
+  font-family: 'Orbitron', sans-serif; /* Nouvelle police */
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #e74c3c; /* Rouge vif pour un contraste marqué */
+  animation: zoomInBlur 1.5s ease-out forwards;
+  text-shadow: 0px 0px 10px rgba(231, 76, 60, 0.7); /* Effet lumineux autour du texte */
+}
+
+.animated-title-zoom:hover {
+  text-shadow: 0px 0px 20px rgba(231, 76, 60, 1); /* Plus lumineux au survol */
+}

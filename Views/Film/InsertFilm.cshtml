@@ -1,0 +1,73 @@
+@{
+    @using GestionCinema.Models;
+    ViewData["Title"] = "Insertion Film";
+    var categorieList = ViewData["CategorieList"] as List<Categorie>;
+    var classificationList = ViewData["ClassificationList"] as List<Classification>;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Film">Film</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Categorie">Categorie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Classe">Classification</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Insertion Film</h1>
+    <form action="/Film/SaveFilm" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="titre">Titre:</label>
+            <input class="form-control" type="text" name="titre" id="titre">
+
+            <label for="categorie">Catégorie:</label>
+            <select class="form-control" name="categorie" id="categorie">
+                <option value="">Sélectionnez une catégorie</option>
+                @foreach (var categorie in categorieList)
+                {
+                    <option value="@categorie.IdCategorie">@categorie.categorie</option>
+                }
+            </select>
+
+            <label for="classe">Classe:</label>
+            <select class="form-control" name="classe" id="classe">
+                <option value="">Sélectionnez une classification</option>
+                @foreach (var classification in classificationList)
+                {
+                    <option value="@classification.IdClasse">@classification.classification</option>
+                }
+            </select>
+
+            <label for="duree">Durée:</label>
+            <input class="form-control" type="time" name="duree" id="duree">
+
+            <label for="image">Image:</label>
+            <input class="form-control" type="file" name="image" id="image" accept="image/*">
+
+            <button class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+    <br />
+    <a href="/Film/Film" class="btn btn-secondary">Retour aux Films</a>
+</div>

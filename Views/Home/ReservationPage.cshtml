@@ -1,0 +1,131 @@
+@{
+    @using GestionCinema.Models;
+    ViewData["Title"] = "Faire une reservation";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<style>
+    body {
+        padding-top: 120px; /* Adjust based on the height of the fixed div */
+    }
+</style>
+
+
+
+<div class="container text-center mt-4">
+    <div class="reservation">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ListeProgramme">Accueil</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <form method="post" action="/Home/Reservation">
+            <input type="hidden" name="idDiffusion" value="@ViewBag.IdDiffusion" />
+            <input type="hidden" name="salleId" value="@ViewBag.salleId" />
+
+            <div class="form-group">
+                <label for="place">Numero place</label>
+                <input type="text" id="place" name="place" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="choix">Option</label><br />
+                <input type="radio" id="choix" name="choix" value="1" /> <label>Payer</label>
+                <input type="radio" id="choix" name="choix" value="2" /> <label>Reserver seulement</label>
+            </div>
+
+            <div class="form-group">
+                <label for="choix">Date reservation</label><br />
+                <input type="datetime-local" name="dtRes" id="">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Reserver</button>
+        </form>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+    </div>
+
+    <h2>Places Disponibles pour la Salle @ViewBag.salleId</h2>
+
+    <div class="info d-flex justify-content-center mb-4">
+        <div class="col-3 mb-1 p-3 text-center border" style="background-color: lightblue;">
+            <strong>Reserver non payer</strong>
+        </div>
+        <div class="col-3 mb-1 p-3 text-center border" style="background-color: lightgreen;">
+            <strong>Reserver</strong>
+        </div>
+        <div class="col-3 mb-1 p-3 text-center border" style="background-color: blue;">
+            <strong>Disponible</strong>
+        </div>
+    </div>
+
+    @foreach (var columnGroup in ((List<PlacesDispo>)ViewBag.Places).GroupBy(p => p.NomColonne))
+    {
+        <h3>@columnGroup.Key</h3>
+
+        // Calcul du nombre de places par ligne, avec arrondi
+        var placesParLigne = (int)Math.Ceiling((double)columnGroup.First().NbPlaces / columnGroup.First().NbLignes);
+        
+        // Calcul du nombre de lignes nécessaire (en arrondissant si besoin)
+        var nbLignes = (int)Math.Ceiling((double)columnGroup.First().NbPlaces / placesParLigne);
+
+        for (int i = 1; i <= nbLignes; i++)
+        {
+            // Déclaration des places pour la ligne i
+            var placesDeLaLigne = columnGroup.Where(p => (columnGroup.ToList().IndexOf(p) / placesParLigne) + 1 == i).ToList();
+            
+            <div class="row mb-2">
+                <div class="col-12" style="text-align: center;">
+                    <p>Ligne @i</p>
+
+                    <!-- Flexbox pour afficher les places de manière horizontale -->
+                    <div class="d-flex flex-wrap justify-content-center">
+                        @foreach (var place in placesDeLaLigne)
+                        {
+                            // Recherche de la réservation correspondante à la place
+                            var reservation = ((List<Reservation>)ViewBag.PlacesFilm)
+                                .FirstOrDefault(res => res.PlaceId == place.NumPlace);
+
+                            // Si la place est réservée, on vérifie son état
+                            if (reservation != null)
+                            {
+                                if (reservation.EtatPlace == 1)
+                                {
+                                    // Place réservée, état "1" (disponible), fond vert clair
+                                    <div class="col-2 mb-1" id="place_@place.NumPlace" style="border: 1px solid; background-color: lightgreen; padding: 10px; margin-right: 5px; text-align: center;">
+                                        <strong>@place.NumPlace</strong>
+                                    </div>
+                                }
+                                else
+                                {
+                                    // Place réservée, état "2" (reserver mais non payer), fond bleu ciel
+                                    <div class="col-2 mb-1" id="place_@place.NumPlace" style="border: 1px solid; background-color: lightblue; padding: 10px; margin-right: 5px; text-align: center;">
+                                        <strong>@place.NumPlace</strong>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                // Place non réservée, fond doré
+                                <div class="col-2 mb-1" id="place_@place.NumPlace" style="border: 1px solid; background-color: blue; padding: 10px; margin-right: 5px; text-align: center;">
+                                    <strong>@place.NumPlace</strong>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

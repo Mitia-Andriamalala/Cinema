@@ -1,0 +1,114 @@
+D:\s5 prog\Cinema\bin\Debug\net8.0\appsettings.Development.json
+D:\s5 prog\Cinema\bin\Debug\net8.0\appsettings.json
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.staticwebassets.runtime.json
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.exe
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.deps.json
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.runtimeconfig.json
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.dll
+D:\s5 prog\Cinema\bin\Debug\net8.0\Cinema.pdb
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.GeneratedMSBuildEditorConfig.editorconfig
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfoInputs.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfo.cs
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.csproj.CoreCompileInputs.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.MvcApplicationPartsAssemblyInfo.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cs
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets.build.json
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets.development.json
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.Cinema.Microsoft.AspNetCore.StaticWebAssets.props
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.build.Cinema.props
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Cinema.props
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Cinema.props
+D:\s5 prog\Cinema\obj\Debug\net8.0\staticwebassets.pack.json
+D:\s5 prog\Cinema\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\s5 prog\Cinema\obj\Debug\net8.0\scopedcss\bundle\Cinema.styles.css
+D:\s5 prog\Cinema\obj\Debug\net8.0\scopedcss\projectbundle\Cinema.bundle.scp.css
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.dll
+D:\s5 prog\Cinema\obj\Debug\net8.0\refint\Cinema.dll
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.pdb
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.genruntimeconfig.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\ref\Cinema.dll
+D:\s5 prog\Cinema\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\s5 prog\Cinema\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\s5 prog\Cinema\bin\Debug\net8.0\MySqlConnector.dll
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.csproj.AssemblyReference.cache
+D:\s5 prog\Cinema\obj\Debug\net8.0\Cinema.csproj.CopyComplete
+D:\s5 prog\Cinema\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\appsettings.Development.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\appsettings.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.staticwebassets.runtime.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.staticwebassets.endpoints.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.exe
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.deps.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.runtimeconfig.json
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.dll
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Cinema.pdb
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\MySqlConnector.dll
+D:\S5\Dotnet\Cinema\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.csproj.AssemblyReference.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.GeneratedMSBuildEditorConfig.editorconfig
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfoInputs.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfo.cs
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.csproj.CoreCompileInputs.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.MvcApplicationPartsAssemblyInfo.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cs
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\scopedcss\bundle\Cinema.styles.css
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\scopedcss\projectbundle\Cinema.bundle.scp.css
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets.build.json
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets.development.json
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.Cinema.Microsoft.AspNetCore.StaticWebAssets.props
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.Cinema.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.build.Cinema.props
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Cinema.props
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Cinema.props
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\staticwebassets.pack.json
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.csproj.Up2Date
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.dll
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\refint\Cinema.dll
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.pdb
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\Cinema.genruntimeconfig.cache
+D:\S5\Dotnet\Cinema\obj\Debug\net8.0\ref\Cinema.dll
+D:\S5\Cinema\bin\Debug\net8.0\appsettings.Development.json
+D:\S5\Cinema\bin\Debug\net8.0\appsettings.json
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.staticwebassets.endpoints.json
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.staticwebassets.runtime.json
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.exe
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.deps.json
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.runtimeconfig.json
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.dll
+D:\S5\Cinema\bin\Debug\net8.0\Cinema.pdb
+D:\S5\Cinema\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\S5\Cinema\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\S5\Cinema\bin\Debug\net8.0\MySqlConnector.dll
+D:\S5\Cinema\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.csproj.AssemblyReference.cache
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.GeneratedMSBuildEditorConfig.editorconfig
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfoInputs.cache
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.AssemblyInfo.cs
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.csproj.CoreCompileInputs.cache
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.MvcApplicationPartsAssemblyInfo.cache
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cache
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.RazorAssemblyInfo.cs
+D:\S5\Cinema\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\S5\Cinema\obj\Debug\net8.0\scopedcss\bundle\Cinema.styles.css
+D:\S5\Cinema\obj\Debug\net8.0\scopedcss\projectbundle\Cinema.bundle.scp.css
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets.build.json
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets.development.json
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.Cinema.Microsoft.AspNetCore.StaticWebAssets.props
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.Cinema.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.build.Cinema.props
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Cinema.props
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Cinema.props
+D:\S5\Cinema\obj\Debug\net8.0\staticwebassets.pack.json
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.csproj.Up2Date
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.dll
+D:\S5\Cinema\obj\Debug\net8.0\refint\Cinema.dll
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.pdb
+D:\S5\Cinema\obj\Debug\net8.0\Cinema.genruntimeconfig.cache
+D:\S5\Cinema\obj\Debug\net8.0\ref\Cinema.dll

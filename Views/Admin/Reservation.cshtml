@@ -1,0 +1,70 @@
+@model List<GestionCinema.Models.ListeReserve>
+@{
+    ViewData["Title"] = "Liste reservations";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Cinema.styles.css" asp-append-version="true" />
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AccueilAdmin">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Film" asp-action="Film">Film</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Gestion">Gestion salle/Places</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Diffusion" asp-action="diffusion">InsertDiffusion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Reservation">Liste reservation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="text-center">
+    <h1 class="display-4 animated-title-zoom">Reservations faites</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>IdReservation</th>
+            <th>Utilisateur</th>
+            <th>EtatPlace</th>
+            <th>PlageHoraireDebut</th>
+            <th>Titre</th>
+            <th>NomSalle</th>
+        </tr>
+        @foreach (var res in Model)
+        {
+            <tr>
+                <td>@res.IdReservation</td>
+                <td>@res.Name</td>
+                <td>
+                    @if(res.EtatPlace==1)
+                    {
+                        <p>Payer</p>
+                    }
+                    else
+                    {
+                        <p>Reserver simplement</p>
+                    }
+                </td>
+                <td>@res.PlageHoraireDebut</td>
+                <td>@res.Titre</td>
+                <td>@res.NomSalle</td>
+            </tr>
+        }
+    </table>
+</div>
